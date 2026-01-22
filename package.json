@@ -1,0 +1,23 @@
+{
+  "name": "studyy",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev:web": "npm run dev -w apps/web",
+    "dev:api": "npm run dev -w apps/api",
+    "dev": "npx concurrently -n web,api -c \"#7C3AED,#9CA3AF\" \"npm:dev:web\" \"npm:dev:api\"",
+    "build:web": "npm run build -w apps/web",
+    "build:api": "npm run build -w apps/api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
